@@ -1,13 +1,13 @@
 server:
-  port: 8761
+  port: 8000
 
 spring:
   application:
     name: registry-service
 
 eureka:
-  instance:
-    hostname: localhost
   client:
     fetch-registry: off
     register-with-eureka: off
+    service-url:
+      defaultZone: ${EUREKA_SERVER_ADDRESS:http://localhost:8000/eureka}
